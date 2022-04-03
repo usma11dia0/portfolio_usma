@@ -1,0 +1,32 @@
+@import "breakpoints/base";
+
+// スマートフォンを横に傾けた時に適用されるスタイル(landscape)
+@media (min-width:480px) {
+    @import "breakpoints/480up";
+}
+
+// タブレットに適用されるスタイル
+@media (min-width:600px) {
+    @import "breakpoints/600up";
+}
+
+// タブレットもしくは小さなデスクトップディスプレイ/PCに適用されるスタイル
+@media (min-width:960px) {
+    @import "breakpoints/960up";
+}
+
+// 通常のデスクトップディスプレイ/PCに適用されるスタイル
+@media (min-width:1280px) {
+    @import "breakpoints/1280up";
+}
+
+// Retinaディスプレイにおける最低限の解像度を指定
+@media (min-resolution: 192dpi)
+        ,(-webkit-min-device-picel-ratio: 2){
+    @import "breakpoints/2x";
+}
+
+// 印刷時に適用されるスタイル
+@media print {
+    @import "breakpoints/print"
+}
