@@ -34,6 +34,7 @@
     & .hero__title {
       transform: translate(-50%, -50%);
       opacity: 1;
+      transition: opacity 1.3s ease 1s, transform 1.3s ease 1s;
     }
   }
 }
@@ -48,7 +49,6 @@
     font-size:25px;
     z-index: 2;
     opacity: 0;
-    transition: opacity 1.3s ease 1s, transform 1.3s ease 1s;
   }
 
   &__footer {

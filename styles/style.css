@@ -42,6 +42,10 @@
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   opacity: 1;
+  -webkit-transition: opacity 1.3s ease 1s, -webkit-transform 1.3s ease 1s;
+  transition: opacity 1.3s ease 1s, -webkit-transform 1.3s ease 1s;
+  transition: opacity 1.3s ease 1s, transform 1.3s ease 1s;
+  transition: opacity 1.3s ease 1s, transform 1.3s ease 1s, -webkit-transform 1.3s ease 1s;
 }
 
 .hero__title {
@@ -54,10 +58,6 @@
   font-size: 25px;
   z-index: 2;
   opacity: 0;
-  -webkit-transition: opacity 1.3s ease 1s, -webkit-transform 1.3s ease 1s;
-  transition: opacity 1.3s ease 1s, -webkit-transform 1.3s ease 1s;
-  transition: opacity 1.3s ease 1s, transform 1.3s ease 1s;
-  transition: opacity 1.3s ease 1s, transform 1.3s ease 1s, -webkit-transform 1.3s ease 1s;
 }
 
 .hero__footer {
@@ -145,6 +145,44 @@ body {
   font-family: 'Kameron','Noto Sans JP', sans-serif;
 }
 
+.font-sm {
+  font-size: 14px;
+}
+
+.font-md {
+  font-size: 17px;
+}
+
+.font-lr {
+  font-size: 17px;
+}
+
+.font-lg {
+  font-size: 25px;
+}
+
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+
+.mb-lg {
+  margin-bottom: 80px !important;
+}
+
+.pd-sm {
+  padding-bottom: 16px !important;
+}
+
+.pd-lg {
+  padding-bottom: 80px !important;
+}
+
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1070px;
+}
+
 @media (min-width: 480px) {
   /******************************************************************
 
@@ -167,6 +205,24 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 Stylesheet: 960px以上のモニタで適用
 
 ******************************************************************/
+  .font-sm {
+    font-size: 16px;
+  }
+  .font-md {
+    font-size: 19px;
+  }
+  .font-lr {
+    font-size: 23px;
+  }
+  .font-lg {
+    font-size: 36px;
+  }
+  .mb-lg {
+    margin-bottom: 150px !important;
+  }
+  .pd-lg {
+    padding-bottom: 150px !important;
+  }
 }
 
 @media (min-width: 1280px) {
