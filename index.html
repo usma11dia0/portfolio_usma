@@ -1,15 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="ja">
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="mobile.css" media="screen and (max-width:600px)"> -->
-    <!-- <link rel="stylesheet" href="desktop.css" media="screen and (min-width:601px)"> -->
-</head>
-<body>
-    <h1>Test</h1>
-</body>
+    <link rel="stylesheet" href="styles/vendors/swiper.min.css"/>
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <div id="global-container">
+        <div id="container">
+            <div id="content">
+                <div class="hero">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="hero__title">Application1</div>
+                                <img src="images/image-1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="hero__title">Application2</div>
+                                <img src="images/image-2.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="hero__title">Application3</div>
+                                <img src="images/image-3.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="hero__footer">
+                            <img class="hero__downarrow" src="images/arrow.svg" alt="">
+                            <span class="hero__scrolltext">scroll</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/vendors/swiper.min.js"></script>
+    <script src="scripts/libs/hero-slider.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>

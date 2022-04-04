@@ -1,3 +1,7 @@
+@import 'modules/variables';
+@import 'modules/mixin';
+@import 'modules/hero-slider';
+
 @import "breakpoints/base";
 
 // スマートフォンを横に傾けた時に適用されるスタイル(landscape)
@@ -28,5 +32,5 @@
 
 // 印刷時に適用されるスタイル
 @media print {
-    @import "breakpoints/print"
+    @import "breakpoints/print";
 }
