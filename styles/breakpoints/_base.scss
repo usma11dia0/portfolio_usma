@@ -43,3 +43,27 @@ img {
     margin: 0 auto;
     max-width: $contentMaxWidth;
 }
+
+.main-title {
+    @extend .font-lg;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.sub-title {
+    @extend .font-sm;
+    color: $cSubTitle;
+}
+
+.houses {
+    @extend .content-width;
+
+    &__title{
+        @extend .font-lr;
+        @extend .mb-sm;
+    }
+
+    &__button{
+        text-align: center;
+    }
+}
