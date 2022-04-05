@@ -14,3 +14,13 @@ Stylesheet: 600px以上のタブレットやモニタで適用
         margin-bottom: 60ox;
     }
 }
+
+.popular {
+    &__container {
+        justify-content: space-between;
+    }
+
+    &__item{
+        flex-basis: 47%;
+    }
+}

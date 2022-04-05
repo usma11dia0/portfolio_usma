@@ -103,9 +103,10 @@
       top: 0;
       left: 0;
       transform: rotateX(90deg);
-      transition: all 0.3s;
+      transition: transform 0.3s;
       transform-origin: top center;
       opacity: 0;
+      z-index: -1;
     }
 
     &:hover {
