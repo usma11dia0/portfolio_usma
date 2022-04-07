@@ -41,6 +41,8 @@
 
 .hero {
   overflow: hidden;
+  padding-top: $navHeight;
+  @extend .pd-lg;
 
   &__title {
     position: absolute;
