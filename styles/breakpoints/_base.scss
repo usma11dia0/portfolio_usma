@@ -64,6 +64,57 @@ img {
     color: $cWineRed;
 }
 
+#content {
+    padding-top: $navHeight;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $navHeight;
+    background-color: transparent;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+
+    &__nav {
+        display: none;
+    }
+    
+    &__ul {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__li {
+        margin-left: 20px;
+
+        & > a {
+            color: $cBlack;
+            text-decoration: none !important;
+            text-transform: uppercase;
+        }
+    }
+
+    & .logo {
+        font-size: 38px;
+        justify-content: center;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @extend .content-width;
+    }
+}
+
 .travel {
     @extend .content-width;
 
