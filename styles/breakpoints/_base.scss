@@ -60,6 +60,50 @@ img {
     flex-direction: column;
 }
 
+.purple {
+    color: $cWineRed;
+}
+
+.travel {
+    @extend .content-width;
+
+    &__inner {
+        @extend .flex;
+        justify-content: space-between;
+        padding: 15px;
+        background-color: $cBgGray;
+        position: relative;
+        z-index: 0;
+    }
+    
+    &__sub {
+        @extend .mb-sm;
+    }
+
+    &__img {
+        height: 300px;
+        @extend .mb-sm;
+        transition: box-shadow 1ms linear 0.8s;
+        
+        & > img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: -1;
+        }
+
+        &.inview {
+            box-shadow: inset 0 0 30px $cBlack;
+        }
+
+        &__texts {
+            @extend .pd-sm;
+        }
+    }
+}
+
+
 .houses {
     @extend .content-width;
 
@@ -73,13 +117,12 @@ img {
     }
 
     &__button{
-        text-align: center;
+        text-align: center;    
         flex-basis: 100%;
     }
-}
+}   
 
 .popular {
-
     &__inner {
         position: relative;
         
