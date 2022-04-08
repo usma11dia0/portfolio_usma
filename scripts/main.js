@@ -68,7 +68,7 @@ class Main {
     this._observers = new ScrollObserver('.cover-slide', this._inviewAnimation);
     this._observers = new ScrollObserver('.appear', this._inviewAnimation);
     this._observers = new ScrollObserver('.tween-animate-title', this._textAnimation);
-    this._observers = new ScrollObserver('.swipwer-container', this._toggleSlideAnimation.bind(this), {once: false});
+    this._observers = new ScrollObserver('.swiper-container', this._toggleSlideAnimation.bind(this), {once: false});
     this._observers = new ScrollObserver('#main-content', this._sideAnimation.bind(this), {once: false, rootMargin: "-300px 0px"});
   }
 
