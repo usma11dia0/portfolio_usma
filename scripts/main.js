@@ -1,35 +1,5 @@
 document.addEventListener('DOMContentLoaded',function(){
   const main = new Main();
-  // hero.start();
-
-  // const cb = function (el, inview) {
-  //   if(inview) {
-  //       const ta = new TweenTextAnimation(el);
-  //       ta.animate(); 
-  //   }
-  // }
-
-  // const so = new ScrollObserver('.tween-animate-title', cb);
-
-  // const _inviewAnimation = function(el, inview) {
-  //   if(inview){
-  //     el.classList.add('inview');
-  //   } else {
-  //     el.classList.remove('inview');
-  //   }
-  // }
-
-  // const so2 = new ScrollObserver('.cover-slide', this._inviewAnimation);
-
-  // const header = document.querySelector('.header');
-  // const _navAnimation = function(el, inview) {
-  //   if(inview){
-  //     header.classList.remove('triggered');
-  //   } else {
-  //     header.classList.add('triggered');
-  //   }
-
-  // const so3 = new ScrollObserver('.nav-trigger', _navAnimation, {once: false});
 });
 
 class Main {
@@ -39,9 +9,22 @@ class Main {
     this._init();
   }
 
+  set observers(val) {
+    this._observers.push(val);
+  }
+
+  get observers() {
+    return this._observers;
+  }
+
   _init(){
     new MobileMenu();
     this.hero = new HeroSlider('.swiper-container');
+    Pace.on('done', this._paceDone.bind(this));
+    this._scrollInit();
+  }
+
+  _paceDone() {
     this._scrollInit();
   }
 
@@ -77,17 +60,21 @@ class Main {
   }
 
   _scrollInit() {
-    this._observers.push(
-      new ScrollObserver('.nav-trigger', this._navAnimation.bind(this), {once: false})
-    );
-
-    this._observers.push(
-      new ScrollObserver('.cover-slide', this._inviewAnimation)
-    );
-
-    new ScrollObserver('.tween-animate-title', this._textAnimation);
-    new ScrollObserver('swipwer-container', this._toggleSlideAnimation.bind(this), {once: false});
+    this._observers = new ScrollObserver('.nav-trigger', this._navAnimation.bind(this), {once: false});
+    this._observers = new ScrollObserver('.cover-slide', this._inviewAnimation);
+    this._observers = new ScrollObserver('.tween-animate-title', this._textAnimation);
+    this._observers = new ScrollObserver('.swipwer-container', this._toggleSlideAnimation.bind(this), {once: false});
     this.hero.start();
+  }
+
+  _destroyObservers() {
+    this.observers.forEach(ob => {
+      ob.destroy();
+    });
+  }
+
+  destroy() {
+    this._destroyObservers();
   }
 }
 
